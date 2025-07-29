@@ -22,4 +22,8 @@ interface WhetherApi {
 
 
 //https://api.weatherapi.com/v1/current.json?key=b9699552c0e441b7ab7174259252407&q=Lucknow&aqi=no
-//git remote add origin https://github.com/your-username/NewsApp.git
+//git remote add origin https://github.com/your-username/NewsApp.
+//git add .
+//git commit -m "Added weather forecast screen"
+//git push
+//dhruv
