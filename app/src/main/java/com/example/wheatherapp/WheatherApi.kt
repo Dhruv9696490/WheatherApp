@@ -8,9 +8,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-private val _retrofit = Retrofit.Builder().baseUrl("https://api.weatherapi.com/v1/").addConverterFactory(
-    GsonConverterFactory.create()).build()
-val retrofit = _retrofit.create(WhetherApi::class.java)
 interface WhetherApi {
     @GET("current.json")
     suspend fun getResponse(

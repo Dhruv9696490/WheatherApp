@@ -23,6 +23,7 @@ import androidx.compose.material3.IconButton
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -42,7 +43,7 @@ import com.example.wheatherapp.weatherdata.WhetherModel
 @Composable
 fun WeatherScreen(context: Context,viewModel: WeatherViewModel){
     var data by remember { mutableStateOf("") }
-    val weatherData = viewModel.dataState.value
+    val weatherData = viewModel.dataState.collectAsState().value
     Column(modifier = Modifier
         .fillMaxSize()
         .padding(top = 40.dp, start = 4.dp, end = 4.dp),
@@ -63,7 +64,7 @@ fun WeatherScreen(context: Context,viewModel: WeatherViewModel){
             IconButton(
                 onClick = {
                     if (data.isNotEmpty()){
-                        viewModel.getData(data)
+                        viewModel.getWeatherData(data)
                     }else{
                         Toast.makeText(context,"Enter the city", Toast.LENGTH_LONG).show()
                     }
